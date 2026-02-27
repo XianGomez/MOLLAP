@@ -1,3 +1,5 @@
+# MOLLAP
+
 Este proyecto implementa un sistema de control de acceso basado en el patrón de diseño **Intercepting Filter** (Filtro Interceptador). La arquitectura permite procesar peticiones de usuario a través de una cadena de filtros antes de ejecutar una acción final en un objetivo (Target).
 
 ## 📊 Arquitectura del Sistema
