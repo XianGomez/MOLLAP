@@ -1,0 +1,6 @@
+.venv
+
+.settings/
+.classpath
+.project
+.vscode/
