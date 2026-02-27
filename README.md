@@ -29,6 +29,7 @@ El proyecto está diseñado siguiendo un diagrama de clases UML que separa las r
 │   ├── target.py        # Clase base Target
 │   └── vehiculo.py      # Clase Vehiculo (Objetivo final)
 └── main.py              # Script de ejecución y prueba
+```
 🚀 Instalación y Ejecución
 Clonar el repositorio:
 
