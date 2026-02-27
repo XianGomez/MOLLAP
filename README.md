@@ -1,14 +1,62 @@
-# MOLLAP - Mobile Electric Vehicle Sharing System
+Este proyecto implementa un sistema de control de acceso basado en el patrón de diseño **Intercepting Filter** (Filtro Interceptador). La arquitectura permite procesar peticiones de usuario a través de una cadena de filtros antes de ejecutar una acción final en un objetivo (Target).
 
-## Overview
-MOLLAP is an innovative mobile application designed for electric vehicle sharing in Palma. Our platform facilitates convenient and sustainable transportation options through an easy-to-use interface, catering to the dynamic needs of urban commuters.
+## 📊 Arquitectura del Sistema
 
-## Key Features
-- **Authentication & Authorization**: MOLLAP ensures a secure user experience by implementing robust authentication and authorization mechanisms. Users can easily create accounts, log in, and manage their profiles safely.
+El proyecto está diseñado siguiendo un diagrama de clases UML que separa las responsabilidades en cuatro módulos principales:
 
-- **Vehicle Access Management**: The application includes an efficient vehicle access management system, allowing users to locate, reserve, and unlock vehicles seamlessly. MOLLAP is committed to maintaining an up-to-date fleet of electric vehicles.
+* **Clientes**: El punto de entrada de la petición.
+* **Filtros**: Componentes que validan o transforman la petición (Autenticación y Autorización).
+* **Administrador**: Coordina la secuencia de filtros y el destino final.
+* **Targets**: El recurso final al que se desea acceder (Vehículo).
 
-- **Future Extensibility**: Built using well-established design patterns, MOLLAP’s architecture is flexible and scalable, allowing for the addition of new tasks, client applications, and vehicle types. This forward-thinking approach ensures our platform can adapt to future transportation trends, enabling us to integrate bicycles, scooters, and more into our service offerings.
 
-## Conclusion
-MOLLAP is not just an application; it is a step towards a greener future in Palma, promoting the use of electric vehicles for shared transportation. Join us to revolutionize urban mobility!
+
+---
+
+## 📂 Estructura de Directorios
+
+```text
+.
+├── administrador/
+│   └── tareas.py        # Clases Tareas y ProgramadorTareas
+├── clientes/
+│   └── cliente.py       # Clase Mollapp (Cliente)
+├── filtros/
+│   ├── filtro.py        # Clase base Filtro
+│   ├── autenticacion.py  # Lógica de Autenticación
+│   └── autorizacion.py   # Lógica de Autorización
+├── targets/
+│   ├── target.py        # Clase base Target
+│   └── vehiculo.py      # Clase Vehiculo (Objetivo final)
+└── main.py              # Script de ejecución y prueba
+🚀 Instalación y Ejecución
+Clonar el repositorio:
+
+Bash
+git clone [https://github.com/tu-usuario/proyecto-filtros.git](https://github.com/tu-usuario/proyecto-filtros.git)
+Entrar al directorio:
+
+Bash
+cd proyecto-filtros
+Ejecutar la aplicación:
+
+Bash
+python main.py
+🛠️ Detalle de Implementación
+El flujo de información se gestiona mediante el paso de un parámetro usuario. El proceso sigue este orden exacto:
+
+El cliente Mollapp envía el usuario "ADMIN".
+
+El ProgramadorTareas recibe la petición y dispara la lista de tareas.
+
+Se ejecuta el filtro de Autenticación.
+
+Se ejecuta el filtro de Autorización.
+
+Si la cadena se completa, el Vehiculo ejecuta la acción de abrir la puerta.
+
+Ejemplo de Salida en Consola:
+Plaintext
+Autenticación OK para ADMIN
+Autorización OK para ADMIN
+Puerta abierta ADMIN!
