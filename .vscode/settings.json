@@ -1,0 +1,9 @@
+{
+    "conventionalCommits.scopes": [
+        "Filtros",
+        "targets",
+        "tareas",
+        "clinete",
+        "mollap"
+    ]
+}
