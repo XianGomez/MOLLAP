@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "Filtros",
         "targets",
-        "tareas"
+        "tareas",
+        "clinete"
     ]
 }
