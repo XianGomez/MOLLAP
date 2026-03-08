@@ -36,11 +36,11 @@ El proyecto está diseñado siguiendo un diagrama de clases UML que separa las r
 Clonar el repositorio:
 
 Bash
-git clone [https://github.com/tu-usuario/proyecto-filtros.git](https://github.com/tu-usuario/proyecto-filtros.git)
+git clone https://github.com/XianGomez/Mollap.git
 Entrar al directorio:
 
 Bash
-cd proyecto-filtros
+cd MOLLAP
 Ejecutar la aplicación:
 
 Bash
